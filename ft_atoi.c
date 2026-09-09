@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nalrjoub <nalrjoub@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/09 13:03:03 by nalrjoub          #+#    #+#             */
-/*   Updated: 2026/09/09 13:03:04 by nalrjoub         ###   ########.fr       */
+/*   Created: 2026/09/09 16:33:57 by nalrjoub          #+#    #+#             */
+/*   Updated: 2026/09/09 16:33:58 by nalrjoub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	*ft_memset(void *s, int c, size_t n)
+int	atoi(const char *nptr)
 {
-	int		i;
-	char	*ptr;
+	int	i;
+	int	sign;
+	int	ans;
 
-	ptr = s;
 	i = 0;
-	while (i < n)
+	sign = 1;
+	ans = 0;
+	while (nptr[i] && (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n'))
+		i++;
+	while (nptr[i] && (nptr[i] == '-' || nptr[i] == '+'))
 	{
-		ptr[i] = c;
+		if (nptr[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	return (ptr);
+	while (nptr[i] && (nptr[i] >= '0' && nptr[i] <= '9'))
+	{
+		ans = (ans * 10) + (nptr[i] - '0');
+		i++;
+	}
+	return (ans * sign);
 }

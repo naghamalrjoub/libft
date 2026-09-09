@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nalrjoub <nalrjoub@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/09 13:03:03 by nalrjoub          #+#    #+#             */
-/*   Updated: 2026/09/09 13:03:04 by nalrjoub         ###   ########.fr       */
+/*   Created: 2026/09/09 16:16:27 by nalrjoub          #+#    #+#             */
+/*   Updated: 2026/09/09 16:16:28 by nalrjoub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	int		i;
 	char	*ptr;
+	int		i;
 
 	ptr = s;
 	i = 0;
 	while (i < n)
 	{
-		ptr[i] = c;
+		ptr[i] = 0x00;
 		i++;
 	}
-	return (ptr);
 }

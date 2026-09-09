@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nalrjoub <nalrjoub@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/09 13:03:03 by nalrjoub          #+#    #+#             */
-/*   Updated: 2026/09/09 13:03:04 by nalrjoub         ###   ########.fr       */
+/*   Created: 2026/09/09 17:38:52 by nalrjoub          #+#    #+#             */
+/*   Updated: 2026/09/09 17:38:52 by nalrjoub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
+	char	*s;
+	char	*d;
 	int		i;
-	char	*ptr;
 
-	ptr = s;
 	i = 0;
+	s = src;
+	d = dest;
 	while (i < n)
 	{
-		ptr[i] = c;
+		d[i] = s[i];
 		i++;
 	}
-	return (ptr);
 }
