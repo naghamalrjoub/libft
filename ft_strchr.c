@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nalrjoub <nalrjoub@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/08 11:13:50 by nalrjoub          #+#    #+#             */
-/*   Updated: 2026/09/08 11:13:53 by nalrjoub         ###   ########.fr       */
+/*   Created: 2026/09/09 15:35:54 by nalrjoub          #+#    #+#             */
+/*   Updated: 2026/09/09 15:35:56 by nalrjoub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalpha(int c)
+#include <stdio.h>
+
+char	*ft_strchr(const char *s, int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if (s[i] == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }

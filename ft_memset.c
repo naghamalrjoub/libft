@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nalrjoub <nalrjoub@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/08 11:13:50 by nalrjoub          #+#    #+#             */
-/*   Updated: 2026/09/08 11:13:53 by nalrjoub         ###   ########.fr       */
+/*   Created: 2026/09/09 13:03:03 by nalrjoub          #+#    #+#             */
+/*   Updated: 2026/09/09 13:03:04 by nalrjoub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	isalpha(int c)
+void	*ft_memset(void *s, int c, unsigned long n)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
+	int		i;
+	char	*ptr;
+
+	ptr = s;
+	i = 0;
+	while (i < n)
+	{
+		ptr[i] = c;
+		i++;
+	}
+	return (ptr);
 }
