@@ -11,10 +11,10 @@ This produces the object file `.o`, which is a binary machine language which con
 ```bash
 ar -rcs libft.a *.o
 ```
->  An archive is a collection of object files (.o files), and the archive file has a .a extension in Unix-like systems (e.g., Linux or macOS). The archive allows multiple object files to be grouped into one file, making it easier to link them with your program. <>1</>
+>  An archive is a collection of object files (.o files), and the archive file has a .a extension in Unix-like systems (e.g., Linux or macOS). The archive allows multiple object files to be grouped into one file, making it easier to link them with your program. <sub>1</sub>
 
 # Resources
 https://diveintosystems.org/book/C2-C_depth/advanced_writing_libraries.html (for implementing libraries)\
 https://www.geeksforgeeks.org/c/compiling-a-c-program-behind-the-scenes (compilation process)\
 https://diveintosystems.org/book/C2-C_depth/advanced_libraries.html (a little more detailed compilation process)\
-<>1</>https://wiki.imindlabs.com.au/cs/usp/4_c_revision/4_2_static_lib (Archived library)
+<sub>1</sub>https://wiki.imindlabs.com.au/cs/usp/4_c_revision/4_2_static_lib (Archived library)
