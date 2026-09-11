@@ -12,7 +12,8 @@ This produces the object file `.o`, which is a binary machine language which con
 ar -rcs libft.a *.o
 ```
 This produces an archived library, and as one of our resources mentions:
->  An archive is a collection of object files (.o files), and the archive file has a .a extension in Unix-like systems (e.g., Linux or macOS). The archive allows multiple object files to be grouped into one file, making it easier to link them with your program. <sup>1</sup>\
+>  An archive is a collection of object files (.o files), and the archive file has a .a extension in Unix-like systems (e.g., Linux or macOS). The archive allows multiple object files to be grouped into one file, making it easier to link them with your program. <sup>1</sup>
+
 `c` creates the library in case it didn't exist.\
 `r` replaces the old files with the new files if the library already exists.\
 `s` creates a sorted index of the library.
