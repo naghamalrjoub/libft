@@ -1,6 +1,17 @@
 ## Makefile
 Makefiles are used when you need to perform a series of instructions depending on the modification of certain files. And it's used in this project to compile each `.c` file into an object code file `.o`. Objects files are then linked together into an archive library `.a` file, which basically is then compiled to produce an executable file.
 
+### Variables
+```
+src := $(wildcard *.c)
+```
+Basically selects all files with the extension `.c` (all C source code files).
+```
+obj := $(src:.c=.o)
+```
+This part replaces the resulting files' (the files saved in src) extension from `.c` to `.o`.
+The reason we used a replacement method instead of directly searching for files with the extension `.o` is that the source code could be not compiled yet into an object code, so the result of searching for the files wouldn't find the files we want.
+
 ### Compiling source code to object code
 ```bash
 cc -o ${filename}.c
