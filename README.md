@@ -33,4 +33,5 @@ This produces an archived library, and as one of our resources mentions:
 https://diveintosystems.org/book/C2-C_depth/advanced_writing_libraries.html (for implementing libraries)\
 https://www.geeksforgeeks.org/c/compiling-a-c-program-behind-the-scenes (compilation process)\
 https://diveintosystems.org/book/C2-C_depth/advanced_libraries.html (a little more detailed compilation process)\
-<sup>1</sup>https://wiki.imindlabs.com.au/cs/usp/4_c_revision/4_2_static_lib (Archived library)
+<sup>1</sup>https://wiki.imindlabs.com.au/cs/usp/4_c_revision/4_2_static_lib (Archived library)\
+https://makefiletutorial.com (Makefile, helped specially with wildcards)
