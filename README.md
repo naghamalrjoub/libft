@@ -10,11 +10,21 @@ Basically selects all files with the extension `.c` (all C source code files).
 obj := $(src:.c=.o)
 ```
 This part replaces the resulting files' (the files saved in src) extension from `.c` to `.o`.
-The reason we used a replacement method instead of directly searching for files with the extension `.o` is that the source code could be not compiled yet into an object code, so the result of searching for the files wouldn't find the files we want.
+The reason we use a replacement method instead of directly searching for files with the extension `.o` is that the source code could be not compiled yet into an object code, so the result of searching for the files wouldn't find the files we want.
 
 ### Compiling source code to object code
 ```bash
-cc -o ${filename}.c
+%.o: %.c
+  cc -c $<
+```
+Here, the `%` wildcard says 'replace this with anything', and with the `.c` appended to it, means 'replace it with all files with the extension `.c`'. same goes for `%.o`.
+But the interesting thing is `%` represents the same value/result on each side.
+For example, if the first part (target) evaluates to `ft_atoi.o`, then the second (dependency) part evaluates to `ft_atoi.c`.
+And, `$<` expression is an automatic variable to represent the first dependency.\
+So, it evaluates to:
+```bash
+$(filename).o: $(filename).c
+  cc -c $(filename).c
 ```
 This produces the object file `.o`, which is a binary machine language which contains unresolved external references. Each file is explicitely compiled into an object file so that when re-compiling the program, only the modified files are recompiled. This helps with optimizing the program instead of recompiling all files in the program.
 
