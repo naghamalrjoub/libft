@@ -1,10 +1,24 @@
 src := $(wildcard *.c)
 obj := $(src:.c=.o)
 CFLAG := -Wall -Werror -Wextra
+NAME = libft.a
 
-libft.a: $(obj)
-	ar -rsc libft.a $(obj)
+all: $(NAME)
 
-ft_atoi.o: ft_atoi.c
-	cc -c $(CFLAG) ft_atoi.c
+$(NAME): $(obj)
+	ar -rsc $(NAME) $(obj)
 
+%: %.o
+	cc $< -o $@
+
+%.o: %.c
+	cc -c $(CFLAG) $<
+
+clean:
+	rm -f $(obj)
+
+fclean:
+	rm -f $(NAME)
+
+re:
+	rm -f $(obj) $(NAME)
