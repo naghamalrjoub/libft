@@ -6,11 +6,11 @@
 /*   By: nalrjoub <nalrjoub@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/08 11:13:50 by nalrjoub          #+#    #+#             */
-/*   Updated: 2026/09/08 11:13:53 by nalrjoub         ###   ########.fr       */
+/*   Updated: 2026/09/12 11:22:10 by nalrjoub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
