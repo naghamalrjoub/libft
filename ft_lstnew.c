@@ -1,0 +1,12 @@
+#include "list.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+t_list	*ft_lstnew(void *content)
+{
+	t_list *node = malloc(sizeof(t_list));
+	node->content = content;
+	node->next = NULL;
+	return (node);
+}
+
