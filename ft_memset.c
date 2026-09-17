@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -25,4 +26,12 @@ void	*ft_memset(void *s, int c, size_t n)
 		i++;
 	}
 	return (ptr);
+}
+
+int main()
+{
+	int arr[2] = {0, 0};	
+	memset(arr, 1, 6);
+	printf("%x", arr[1]);
+
 }
