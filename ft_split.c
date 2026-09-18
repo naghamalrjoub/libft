@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 
 int	count_words(char const *s, char c)
@@ -53,14 +54,14 @@ void	save(const char *s, char **splitted, int st, int end, int j)
 	{
 		splitted[j][k] = s[st];
 		st++;
+		k++;
 	}
 	splitted[j][k] = '\0';
 }
 
-int	count_len(char const *s, char c, char **splitted)
+void	count_len(char const *s, char c, char **splitted)
 {
 	int	i;
-	int	count;
 	int	st;
 	int	j;
 
@@ -68,31 +69,31 @@ int	count_len(char const *s, char c, char **splitted)
 	j = 0;
 	while (s[i])
 	{
-		count = 0;
 		while (s[i] && s[i] == c)
 			i++;
 		st = i;
 		while (s[i] && s[i] != c)
 		{
 			i++;
-			count++;
 		}
+		printf("%d\n", i - st);
 		if (i > st)
 			save(s, splitted, st, i, j++);
 	}
-	return (count);
 }
 
 char **ft_split(char const *s, char c)
 {
 	int		words_count;
 	char	**splitted;
-	int		len;
+	int		i;
 
+	i = 0;
 	words_count = count_words(s, c);
 	splitted = malloc((words_count + 1) * sizeof(char *));
 	if (!splitted)
 		return (NULL);
+	count_len(s, c, splitted);
 	splitted[words_count] = NULL;
-	return splitted;
+	return (splitted);
 }
