@@ -39,9 +39,17 @@ This produces an archived library, and as one of our resources mentions:
 `r` replaces the old files with the new files if the library already exists.\
 `s` creates a sorted index of the library.
 
+## Linked Lists
+Linked lists are dynamic data structure which uses pointers for its implementation which acts like an array for storing data with few differences.
+Linked lists are implemented using `structs`, which are:
+> A structure in C is a user-defined data type that groups related variables of different data types under a single name. <sup>2</sup>
+
 # Resources
 https://diveintosystems.org/book/C2-C_depth/advanced_writing_libraries.html (for implementing libraries)\
 https://www.geeksforgeeks.org/c/compiling-a-c-program-behind-the-scenes (compilation process)\
 https://diveintosystems.org/book/C2-C_depth/advanced_libraries.html (a little more detailed compilation process)\
 <sup>1</sup>https://wiki.imindlabs.com.au/cs/usp/4_c_revision/4_2_static_lib (Archived library)\
-https://makefiletutorial.com (Makefile, helped specially with wildcards)
+https://makefiletutorial.com (Makefile, helped specially with wildcards)\
+https://www.learn-c.org/en/Linked_lists (linked lists)\
+https://www.geeksforgeeks.org/c/structures-c (C structs)\
+<sup>2</sup>https://www.geeksforgeeks.org/c/structures-c/ (C structs)
