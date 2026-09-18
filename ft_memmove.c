@@ -10,4 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 
+void	*memmove(void *dest, const void *src, size_t n)
+{
+	char		*d;
+	const char	*s;
+	int		i;
+
+	d = dest;
+	s = src;
+	i = 0;
+	while (i < n)
+	{
+		if (d - s > 0)
+			d[n - i - 1] = s[n - i - 1];
+		else
+			d[i] = s[i];
+		i++;
+	}
+	return (d);
+}
