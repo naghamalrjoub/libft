@@ -2,9 +2,7 @@
 #include <stdio.h>
 
 int main() {
-	char str[] = "  hellooo  world";
-	char **splitted = ft_split(str, ' ');
-	int i = 0;
-	while (splitted[i])
-		printf("%s\n", splitted[i++]);
+	int x = -1021;
+	printf("%s", ft_itoa(x));
+
 }

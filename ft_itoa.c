@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
 int	count(int n)
 {
 	int	cnt;
@@ -30,14 +31,21 @@ char	*ft_itoa(int n)
 	int		i;
 
 	i = count(n);
-	ans = malloc(sizeof(char) * (count(n) + 1));
+	if (n < 0)
+	{
+		i++;
+		n *= -1;
+	}
+	ans = malloc(sizeof(char) * (i + 1));
 	if (!ans)
 		return (NULL);
 	while (n)
 	{
 		i--;
-		ans[i] = n % 10;
+		ans[i] = n % 10 + '0';
 		n /= 10;
 	}
+	if (i)
+		ans[0] = '-';
 	return (ans);
 }
