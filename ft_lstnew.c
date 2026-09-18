@@ -1,6 +1,5 @@
-#include "list.h"
+#include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 t_list	*ft_lstnew(void *content)
 {

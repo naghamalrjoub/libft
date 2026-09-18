@@ -12,16 +12,17 @@
 
 #include <stdio.h>
 
-size_t strlcpy(char *dst, const char *src, size_t size)
+size_t	strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
 	i = 0;
-	//what happens if one of the ptrs was null
+	if (!dst || !src || !size)
+		return (0);
 	while (src[i] && i < size - 1)
 	{
 		dst[i] = src[i];
 	}
 	dst[i] = '\0';
 	return (i);
-}
+} 
