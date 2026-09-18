@@ -1,23 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
-#include "list.h"
 
 int main()
 {
 	t_list *head = (t_list *)malloc(sizeof(t_list));
-	head = ft_lstnew("hello");
 	for(int i = 0; i < 3; i++) {
 		int *curr = malloc(sizeof(int));
 		*curr = i;
 		t_list *node = ft_lstnew(curr);
-		ft_lstadd_front(&head, node);
+		if (!i)
+			head = node;
+		else
+			ft_lstadd_back(&head, node);
 	}
-
-	while(head->next != NULL)
+	t_list *head1 = (t_list *)malloc(sizeof(t_list));
+	head1 = head;
+	while(head != NULL)
 	{
-		printf("%x\t", *((int *)head->content));
+//		printf("%i\t", *((int *)head->content));
 		head = head->next;
 	}
+
+	printf("%i", ft_lstsize(head1));
+
 	return 0;
 }
