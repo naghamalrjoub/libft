@@ -6,7 +6,7 @@
 /*   By: nalrjoub <nalrjoub@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 14:00:16 by nalrjoub          #+#    #+#             */
-/*   Updated: 2026/09/12 14:00:17 by nalrjoub         ###   ########.fr       */
+/*   Updated: 2026/09/19 11:30:25 by nalrjoub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,4 @@ size_t	strlcpy(char *dst, const char *src, size_t size)
 	}
 	dst[i] = '\0';
 	return (i);
-} 
+}

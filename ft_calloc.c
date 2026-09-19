@@ -15,9 +15,9 @@
 
 void	*calloc(size_t n, size_t size)
 {
-		void	*alloc;
+	void	*alloc;
 
-		alloc = malloc(n * size);
-		ft_bzero(alloc, size);
-		return (alloc);
+	alloc = malloc(n * size);
+	ft_bzero(alloc, size);
+	return (alloc);
 }
