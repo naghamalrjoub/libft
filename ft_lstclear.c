@@ -24,7 +24,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*head;
 	t_list	*curr;
 
-	head = *lst;
 	while (*lst)
 	{
 		curr = *lst;
