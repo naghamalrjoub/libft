@@ -31,10 +31,10 @@ int	in_set(char c, char const *set)
 
 int	count_c(char const *s1, size_t len, char const *set, int pos)
 {
-	int	i;
+	long	i;
 
 	i = 0;
-	while (pos && i < len && in_set(s1[i], set))
+	while (pos && i < (long)len && in_set(s1[i], set))
 		i++;
 	while (!pos && i >= 0 && in_set(s1[len - i - 1], set))
 		i++;
