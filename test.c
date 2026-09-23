@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main() {
-	int x = -1021;
-	printf("%s", ft_itoa(x));
+	 
+	printf("%s",ft_strnstr("hello", "", 0));
 
 }
