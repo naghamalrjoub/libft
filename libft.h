@@ -59,4 +59,7 @@ void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 char			*ft_strtrim(char const *s1, char const *set);
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 #endif

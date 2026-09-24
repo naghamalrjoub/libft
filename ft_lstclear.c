@@ -11,12 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-
-void	free_node(void *node)
-{
-	free((t_list *)node);
-}
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
@@ -24,9 +18,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 	while (*lst)
 	{
-		curr = *lst;
-		*lst = (*lst)->next;
-		del(curr);
-		curr = NULL;
+		curr = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = curr;
 	}
 }

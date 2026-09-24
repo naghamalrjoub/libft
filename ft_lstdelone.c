@@ -10,16 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
-
-void	free_node(t_list *node)
-{
-	free(node->content);
-}
+#include <stdlib.h>
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	del(lst);
+	del(lst->content);
 	free(lst);
 }

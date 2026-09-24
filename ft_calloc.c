@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
+#include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
 
@@ -17,7 +20,11 @@ void	*ft_calloc(size_t n, size_t size)
 {
 	void	*alloc;
 
+	if (n != 0 && size > (size_t)-1 / n)
+		return (NULL);
 	alloc = malloc(n * size);
+	if (!alloc)
+		return (NULL);
 	ft_bzero(alloc, size);
 	return (alloc);
 }

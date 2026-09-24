@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 
 int	count(int n)
@@ -17,6 +18,8 @@ int	count(int n)
 	int	cnt;
 
 	cnt = 0;
+	if (n <= 0)
+		cnt++;
 	while (n)
 	{
 		cnt++;
@@ -25,20 +28,25 @@ int	count(int n)
 	return (cnt);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int nb)
 {
 	char	*ans;
 	int		i;
+	long	n;
 
+	n = nb;
 	i = count(n);
 	if (n < 0)
-	{
-		i++;
 		n *= -1;
-	}
 	ans = malloc(sizeof(char) * (i + 1));
 	if (!ans)
 		return (NULL);
+	ans[i] = '\0';
+	if (!n)
+	{
+		i--;
+		ans[i] = '0';
+	}
 	while (n)
 	{
 		i--;
