@@ -11,101 +11,78 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
-void	free_all(char **splitted, int j)
+void	free_all(char **arr, int k)
 {
-	while (j >= 0)
+	while (k > 0)
 	{
-		free(splitted[j]);
-		j--;
+		k--;
+		free(arr[k]);
 	}
+	free(arr);
 }
 
 int	count_words(char const *s, char c)
 {
-	int i;
-	int	cnt;
+	int	i;
+	int	count;
 
 	i = 0;
-	cnt = 0;
+	count = 0;
 	while (s[i])
 	{
 		while (s[i] && s[i] == c)
 			i++;
 		if (s[i])
-			cnt++;
-		while (s[i] && s[i] != c)
-			i++;
-	}
-	return (cnt);
-}
-
-void	allocate(char **splitted, char c, const char *s)
-{
-	int	j;
-	int	i;
-	int	count;
-
-	j = 0;
-	i = 0;
-	while (s[i])
-	{
-		count = 0;
-		while (s[i] && s[i] == c)
-			i++;
-		if (!s[i])
-			break;
-		while (s[i] && s[i] != c)
-		{
-			i++;
 			count++;
-		}
-		splitted[j] = (char *)malloc((count + 1) * sizeof(char));
-		if (!splitted[j])
-			free_all(splitted, j);
-		j++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
+	return (count);
 }
 
-void	save(char **splitted, char c, const char *s)
+void	split(char const *s, char c, char **arr)
 {
-	int	j;
 	int	i;
+	int	j;
 	int	k;
 
-	j = 0;
 	i = 0;
+	k = 0;
 	while (s[i])
 	{
-		k = 0;
-		while (s[i] && s[i] == c)
+		j = 0;
+		while (s[i + j] && s[i + j] == c)
 			i++;
-		if (!s[i])
-			break;
-		while (s[i] && s[i] != c)
+		while (s[i + j] && s[i + j] != c)
+			j++;
+		if (j)
 		{
-			splitted[j][k] = s[i];
-			i++;
-			k++;
+			arr[k] = malloc((j + 1) * sizeof(char));
+			if (!arr[k])
+			{
+				free_all(arr, k);
+				return ;
+			}
+			ft_strlcpy(arr[k++], s + i, j + 1);
 		}
-		splitted[j][k + 1] = '\0';
-		j++;
+		i += j;
 	}
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		words_count;
 	char	**splitted;
+	int		words;
 
-	words_count = count_words(s, c);
-	splitted = malloc((words_count + 1) * sizeof(char *));
+	words = count_words(s, c);
+	splitted = malloc((words + 1) * sizeof(char *));
 	if (!splitted)
+	{
 		free(splitted);
-	allocate(splitted, c, s);
-	save(splitted, c, s);
-	splitted[words_count] = NULL;
+		return (NULL);
+	}
+	split(s, c, splitted);
+	splitted[words] = NULL;
 	return (splitted);
 }

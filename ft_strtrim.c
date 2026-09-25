@@ -53,6 +53,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = ft_strlen(s1);
 	i = 0;
 	st = count_c(s1, len, set, 1);
+	if (st == len)
+		return (ft_strdup(""));
 	end = count_c(s1, len, set, 0);
 	count = st + end;
 	str = malloc(sizeof(char) * (len - count + 1));

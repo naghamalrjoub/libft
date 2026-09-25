@@ -19,7 +19,7 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	sign = 1;
 	ans = 0;
-	while (nptr[i] && (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n'))
+	while (nptr[i] && (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13)))
 		i++;
 	if (nptr[i] && (nptr[i] == '-' || nptr[i] == '+'))
 	{
