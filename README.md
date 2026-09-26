@@ -1,3 +1,41 @@
+*This activity has been created as part of the 42 curriculum by nalrjoub.*
+
+# Libft
+## Description
+Libft is a custom C library that reimplements a selection of standard C library (libc) functions from scratch, along with additional utility functions not found in the standard library.
+The goal of this project is to build a deeper understanding of how commonly used functions work internally — memory handling, string manipulation, type conversion, and linked list operations — while also creating a personal toolkit of functions that will be reused throughout the rest of the 42 curriculum.
+
+The library is organized into three parts:
+- Libc functions — reimplementations of standard functions such as strlen, memcpy, strncmp, atoi, etc., matching their original prototypes and behavior (prefixed with ft_).
+- Additional functions — functions that are either not in the libc, or that are part of it but in a different form, such as ft_split, ft_itoa, ft_strjoin, and file-descriptor output helpers.
+- Linked list functions — a set of functions for creating and manipulating singly linked lists (t_list), including creation, insertion, iteration, mapping, and memory-safe deletion.
+
+All functions comply with the 42 Norm and are compiled without memory leaks or undefined crashes.
+
+## Instructions
+
+### Compilation
+
+```bash
+make         # builds libft.a and .o files
+make clean   # removes .o files
+make fclean  # removes .o files and libft.a
+make re      # rebuilds from scratch
+```
+
+### Usage
+
+In a C source code file, include the library's header:
+```c
+#include "libft.h"
+```
+And write your code.
+Then, to link the library during the linking phase of the library:
+```bash
+cc test.c libft.a
+```
+Which produces the executable file `./a.out` — note that the flags are omitted as they are considered in the compilation phase of each source code of the library's functions.  
+
 ## Makefile
 Makefiles are used when you need to perform a series of instructions depending on the modification of certain files. And it's used in this project to compile each `.c` file into an object code file `.o`. Objects files are then linked together into an archive library `.a` file, which basically is then compiled to produce an executable file.
 
@@ -45,11 +83,14 @@ Linked lists are implemented using `structs`, which are:
 > A structure in C is a user-defined data type that groups related variables of different data types under a single name. <sup>2</sup>
 
 # Resources
-https://diveintosystems.org/book/C2-C_depth/advanced_writing_libraries.html (for implementing libraries)\
-https://www.geeksforgeeks.org/c/compiling-a-c-program-behind-the-scenes (compilation process)\
-https://diveintosystems.org/book/C2-C_depth/advanced_libraries.html (a little more detailed compilation process)\
-<sup>1</sup>https://wiki.imindlabs.com.au/cs/usp/4_c_revision/4_2_static_lib (Archived library)\
-https://makefiletutorial.com (Makefile, helped specially with wildcards)\
-https://www.learn-c.org/en/Linked_lists (linked lists)\
-https://www.geeksforgeeks.org/c/structures-c (C structs)\
-<sup>2</sup>https://www.geeksforgeeks.org/c/structures-c/ (C structs)
+- https://diveintosystems.org/book/C2-C_depth/advanced_writing_libraries.html (for implementing libraries)
+- https://www.geeksforgeeks.org/c/compiling-a-c-program-behind-the-scenes (compilation process)
+- https://diveintosystems.org/book/C2-C_depth/advanced_libraries.html (a little more detailed compilation process)
+- <sup>1</sup>https://wiki.imindlabs.com.au/cs/usp/4_c_revision/4_2_static_lib (Archived library)
+- https://makefiletutorial.com (Makefile, helped specially with wildcards)
+- https://www.learn-c.org/en/Linked_lists (linked lists)
+- https://www.geeksforgeeks.org/c/structures-c (C structs)
+- <sup>2</sup>https://www.geeksforgeeks.org/c/structures-c/ (C structs)
+- https://medium.com/@bdov_/https-medium-com-bdov-c-static-libraries-what-why-and-how-b6b442b054d3 (static libraries)
+- man page
+- AI was used in this project to enhance my understanding of linked lists and makefiles, and with formatting the README file
