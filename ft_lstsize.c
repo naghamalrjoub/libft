@@ -19,7 +19,7 @@ unsigned int	ft_lstsize(t_list *lst)
 	t_list			*curr;
 
 	if (!lst)
-		return 0;
+		return (0);
 	curr = lst;
 	cnt = 0;
 	while (curr != NULL)

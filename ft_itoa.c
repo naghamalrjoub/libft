@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 int	count(int n)
@@ -43,10 +42,7 @@ char	*ft_itoa(int nb)
 		return (NULL);
 	ans[i] = '\0';
 	if (!n)
-	{
-		i--;
-		ans[i] = '0';
-	}
+		ans[--i] = '0';
 	while (n)
 	{
 		i--;
