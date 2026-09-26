@@ -3,6 +3,7 @@
 
 int main() {
 	 
-	printf("%s",ft_strnstr("hello", "", 0));
-
+    char s[6];
+    ft_strlcpy(s , "hello", 6);
+    printf("%s", s);
 }
