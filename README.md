@@ -1,3 +1,25 @@
+*This activity has been created as part of the 42 curriculum by nalrjoub.*
+
+# Libft
+## Description
+Libft is a custom C library that reimplements a selection of standard C library (libc) functions from scratch, along with additional utility functions not found in the standard library.
+The goal of this project is to build a deeper understanding of how commonly used functions work internally — memory handling, string manipulation, type conversion, and linked list operations — while also creating a personal toolkit of functions that will be reused throughout the rest of the 42 curriculum.
+
+The library is organized into three parts:
+- Libc functions — reimplementations of standard functions such as strlen, memcpy, strncmp, atoi, etc., matching their original prototypes and behavior (prefixed with ft_).
+- Additional functions — functions that are either not in the libc, or that are part of it but in a different form, such as ft_split, ft_itoa, ft_strjoin, and file-descriptor output helpers.
+- Linked list functions — a set of functions for creating and manipulating singly linked lists (t_list), including creation, insertion, iteration, mapping, and memory-safe deletion.
+
+All functions comply with the 42 Norm and are compiled without memory leaks or undefined crashes.
+
+## Instructions
+```bash
+make         # builds libft.a and .o files
+make clean   # removes .o files
+make fclean  # removes .o files and libft.a
+make re      # rebuilds from scratch
+```
+
 ## Makefile
 Makefiles are used when you need to perform a series of instructions depending on the modification of certain files. And it's used in this project to compile each `.c` file into an object code file `.o`. Objects files are then linked together into an archive library `.a` file, which basically is then compiled to produce an executable file.
 
