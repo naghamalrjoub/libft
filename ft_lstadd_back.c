@@ -18,8 +18,7 @@ void	ft_lstadd_back(t_list **lst, t_list *nw)
 
 	curr = ft_lstlast(*lst);
 	if (!curr)
-		curr = nw;
+		(*lst) = nw;
 	else
 		curr->next = nw;
-	nw->next = NULL;
 }

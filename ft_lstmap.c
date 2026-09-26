@@ -17,9 +17,14 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*head;
 	t_list	*node;
 
+	head = NULL;
+	if (!lst)
+		return (NULL);
+	if (!f)
+		return (lst);
 	while (lst)
 	{
-		node = ft_lstnew(f(lst->content));
+		node = ft_lstnew(lst->content);
 		if (!node)
 		{
 			if (head)
@@ -27,6 +32,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			return (NULL);
 		}
 		ft_lstadd_back(&head, node);
+		node->content = f(lst->content);
 		lst = lst->next;
 	}
 	return (head);

@@ -21,7 +21,7 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
-
+/*
 int main()
 {
 	t_list *node = ft_lstnew("hr");
@@ -29,4 +29,4 @@ int main()
 	ft_lstadd_front(&node, newnode);
 	printf("%s", (char *)ft_lstlast(node)->content);
 	free(newnode);
-}
+}*/
