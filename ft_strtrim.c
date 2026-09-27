@@ -11,11 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
 
-int	in_set(char c, char const *set)
+static int	in_set(char c, char const *set)
 {
 	int	i;
 
@@ -29,7 +26,7 @@ int	in_set(char c, char const *set)
 	return (0);
 }
 
-int	count_c(char const *s1, size_t len, char const *set, int pos)
+static int	count_c(char const *s1, size_t len, char const *set, int pos)
 {
 	long	i;
 
