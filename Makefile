@@ -73,3 +73,5 @@ fclean:
 	rm -f $(obj) $(NAME)
 
 re: fclean all
+
+.PHONY: all fclean clean re
