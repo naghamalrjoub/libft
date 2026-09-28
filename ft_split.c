@@ -18,8 +18,10 @@ static void	free_all(char **arr, int k)
 	{
 		k--;
 		free(arr[k]);
+		arr[k] = NULL;
 	}
 	free(arr);
+	arr = NULL;
 }
 
 static int	count_words(char const *s, char c)
@@ -83,6 +85,8 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	}
 	split(s, c, splitted);
+	if (!splitted)
+		return (NULL);
 	splitted[words] = NULL;
 	return (splitted);
 }
