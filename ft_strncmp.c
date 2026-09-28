@@ -14,9 +14,6 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-
-	// str1 = "hello\0ew";
-	// str2 = "hello\0mew";
 	size_t	i;
 
 	i = 0;
